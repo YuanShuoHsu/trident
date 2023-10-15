@@ -1,0 +1,13 @@
+@import "../../styles/breakpoints.module.scss";
+
+.paragraphs {
+  padding: 35px;
+  display: flex;
+  background-color: #dcccbc;
+  gap: 35px;
+  flex: 1;
+
+  @include respond-to(lg) {
+    flex-direction: column;
+  }
+}
