@@ -1,0 +1,18 @@
+@import "../../styles/breakpoints.module.scss";
+
+.home {
+  display: flex;
+
+  @include respond-to(lg){
+    flex-direction: column;
+  }
+
+  &__main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden auto;
+    scroll-behavior: smooth;
+  }
+}

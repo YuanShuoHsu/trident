@@ -1,0 +1,55 @@
+@import "../../../styles/breakpoints.module.scss";
+
+.sidebarHamburger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s opacity;
+
+  @include respond-to(lg) {
+    display: flex;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 3px;
+    background-color: #000000;
+    transform: translate(0, -10px);
+    box-shadow: 0 20px 0 #000000;
+    transition: 0.2s transform, 0.2s box-shadow;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 3px;
+    background-color: #000000;
+    transform: translate(-5px, 0);
+    transition: 0.2s width, 0.2s transform;
+  }
+
+  &--active {
+    &::before {
+      transform: translate(0) rotate(45deg);
+      box-shadow: 0 0 0 #000000;
+    }
+
+    &::after {
+      width: 24px;
+      transform: translateX(0) rotate(-45deg);
+    }
+  }
+}

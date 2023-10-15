@@ -1,0 +1,49 @@
+@import "../../styles/breakpoints.module.scss";
+
+.banner {
+  position: relative;
+
+  &__imgBox {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    @include respond-to(md) {
+      height: auto;
+    }
+
+    .banner__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      content: url("../../images/Banner.png");
+
+      @include respond-to(md) {
+        object-fit: contain;
+        content: url("../../images/BannerMobile.png");
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    text-align: right;
+
+    .banner__title {
+      color: #ffffff;
+
+      @include respond-to(sm) {
+        width: 50%;
+        margin-left: auto;
+      }
+    }
+
+    .banner__description {
+      color: #ffffff;
+    }
+  }
+}
